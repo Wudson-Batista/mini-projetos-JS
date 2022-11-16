@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <title>CRUD</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <header class="py-3 bg-warning">
+        <h1 class="title text-center fs-3">Cadastro de Clientes</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="card p-4 mt-5">
+                <!-- Button trigger modal -->
+                <div class="button-wrapper w-25" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button class="btn btn-primary">Cadastrar Cliente</button>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal modal-cadastro fade modal-lg" id="exampleModal" tabindex="-1"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Cadastrar Cliente</h5>
+                                <button type="button" class="btn-close" id="close-cadastro" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body p-4">
+                                <form action="" id="form-cadastro">
+                                    <div class="form-element-flex row">
+                                        <div class="form-element col">
+                                            <label for="" class="form-label">Nome:</label>
+                                            <input type="text" class="form-control" id="nome" required>
+                                        </div>
+                                        <div class="form-element col">
+                                            <label for="" class="form-label">E-mail:</label>
+                                            <input type="text" class="form-control" id="email" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-element-flex row mt-3">
+                                        <div class="form-element col">
+                                            <label for="" class="form-label">Celular:</label>
+                                            <input type="text" class="form-control" id="cel" required>
+                                        </div>
+                                        <div class="form-element col">
+                                            <label for="" class="form-label">Cidade:</label>
+                                            <input type="text" class="form-control" id="cidade" required>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 d-flex justify-content-end gap-2">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-success px-3" id="salvar">Salvar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped text-center mt-4 table-hover">
+                        <thead class="bg-warning">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Celular</th>
+                                <th scope="col">Cidade</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cadastro-table-body">
+                            <!-- <tr>
+                                <th scope="row">1</th>
+                                <td>Irineu</td>
+                                <td>irineu@email.com</td>
+                                <td>(21) 99999-9999</td>
+                                <td>Rio de Janeiro</td>
+                                <td>
+                                    <button class="btn btn-info" data-bs-toggle="modal"
+                                        data-bs-target="#modal-editar">Editar</button>
+                                    <button class="btn btn-danger">Remover</button>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal modal-cadastro fade modal-lg" id="modal-editar" tabindex="-1"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Editar Cliente</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                    id="close-edit"></button>
+                            </div>
+                            <div class="modal-body p-4">
+                                <form action="" id="form-edit">
+                                    <div class="form-element-flex row">
+                                        <div class="form-element col">
+                                            <label for="" class="form-label">Nome:</label>
+                                            <input type="text" class="form-control" id="nome_edit" required>
+                                        </div>
+                                        <div class="form-element col">
+                                            <label for="" class="form-label">E-mail:</label>
+                                            <input type="text" class="form-control" id="email_edit" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-element-flex row mt-3">
+                                        <div class="form-element col">
+                                            <label for="" class="form-label">Celular:</label>
+                                            <input type="text" class="form-control" id="cel_edit" required>
+                                        </div>
+                                        <div class="form-element col">
+                                            <label for="" class="form-label">Cidade:</label>
+                                            <input type="text" class="form-control" id="cidade_edit" required>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 d-flex justify-content-end gap-2">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-success px-3" id="save-edit">Salvar
+                                            Alterações</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+    <script src="./main.js"></script>
+</body>
+
+</html>

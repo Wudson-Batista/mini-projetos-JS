@@ -1,0 +1,18 @@
+main {
+    position: relative;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+}
+
+.element-wrapper h1 {
+    font-size: 80px;
+}
+
+.element-wrapper p {
+    font-size: 20px;
+}

@@ -1,0 +1,25 @@
+.todo-container{
+    max-width: 700px;
+    margin: 0 auto;
+
+}
+
+.form-check-input:checked + div {
+    text-decoration: line-through;
+}
+
+.todo-item {
+    transition: .4s;
+}
+
+.todo-item:hover {
+    background-color: rgb(204, 165, 252);
+    color: white;
+}
+
+.todo-item .btn {
+    transition: .4s;
+}
+.todo-item .btn:hover {
+    color: rgb(255, 94, 94);
+}
